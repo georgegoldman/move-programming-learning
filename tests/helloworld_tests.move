@@ -1,18 +1,9 @@
-/*
 #[test_only]
 module helloworld::helloworld_tests;
-// uncomment this line to import the module
-// use helloworld::helloworld;
 
-const ENotImplemented: u64 = 0;
+use helloworld::hello_world;
 
 #[test]
-fun test_helloworld() {
-    // pass
+fun test_hello_world(){
+    assert!(hello_world::hello_world() == b"Hello, World!".to_string(), 0)
 }
-
-#[test, expected_failure(abort_code = ::helloworld::helloworld_tests::ENotImplemented)]
-fun test_helloworld_fail() {
-    abort ENotImplemented
-}
-*/
